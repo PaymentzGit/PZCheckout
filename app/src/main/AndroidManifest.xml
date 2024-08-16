@@ -1,6 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.paymentz.pz_checkout_sdk">
-
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -13,9 +11,7 @@
         android:theme="@style/AppTheme"
         android:hardwareAccelerated="true">
 
-
-
-        <activity android:name=".CheckoutActivity"></activity>
+        <activity android:name=".WebCheckoutPayment"/>
 
     </application>
 </manifest>

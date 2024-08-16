@@ -4,17 +4,65 @@ package com.paymentz.pz_checkout_sdk.model;
  * Created by Admin on 8/23/2018.
  */
 
-public class PayMode {
+public enum PayMode {
 
-    public static final String CC = "CC"; //Credit Card
-    public static final String VA = "VA"; //Virtual Account
-    public static final String EW = "EW"; //W-Wallet
-    public static final String DC = "DC"; //Debit Card
-    public static final String NB = "NB"; //Netbanking
-    public static final String PV = "PV"; //Vouchers
-    public static final String ACH = "ACH"; //ACH
-    public static final String CHK = "CHK"; //CHK
-    public static final String SEPA = "SEPA"; //SEPA
-    public static final String PC = "PC"; //Prepared Cards
-    public static final String PP = "PP"; //Postpaid cards
+     CC, //Credit Card
+     VA, //Virtual Account
+     EW, //W-Wallet
+     DC, //Debit Card
+     NB, //Netbanking
+     PV, //Vouchers
+     ACH, //ACH
+     CHK, //CHK
+     SEPA, //SEPA
+     PC, //Prepared Cards
+     PP, //Postpaid cards
+     EX, //Exchange
+     CS, //ClearSettle
+     EWI, //WalletIndia
+     UPI, //UPI
+     NBI, //NetBankingIndia
+     CRP, //CRYPTO
+     ROM, //ROMCARD
+     TP, //TOJIKA
+     PLMP, //PLMP
+     ORPG, //OneRoad
+     CU, //CupUpi
+     BC, //BITCOIN
+     PAYG, //PAYG
+     OP, //ONLINEPAY
+     PB, //PayBoutique
+     ZOTA, //ZOTA
+     ECHK, //eCheck
+     CP, //CardPresent
+     BT, //BankTransfer
+     TM, //TAPMIO
+     NBB, //NetBankingBangla
+     EWB, //WalletBangla
+     KCP, //KCP
+     T000, //Triple000
+     Zhi, //Zhixinfu
+     TWD, //TWDTaiwan
+     MMA, //MobileMoneyAfrica
+     Gift, //Giftpay
+     QKC, //QKBANK
+     DOKU, //DOKU
+     WPAY, //wealthpay
+     ES, //ECOSPEND
+     FP, //FASTPAY
+     BTA, //BankTransferAfrica
+     DBT, //DelayedBankTransfer
+     GCA, //GiftCardAfrica
+     GPAY, //GPAY
+     MTN, //MTNMOMO
+     TPAY, //TIGERPAY
+     CR, //CajaRural
+     CARD, //CARD
+     BDM, //MobileBankingBangla
+     EWA, //WalletAfrica
+     SFP, //SMARTFASTPAY
+     CHS, //CASH
+     IMT, //IMerchantTransfer
+     POT, //Payout
+     UPQR //UPIQR
 }

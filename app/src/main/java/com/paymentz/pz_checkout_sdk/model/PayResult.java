@@ -41,7 +41,7 @@ public class PayResult implements Serializable {
 
             JSONObject json = new JSONObject(jsonString);
 
-            trackingid = json.getString("trackingId");
+            trackingid = json.getString("trackingid");
             status = json.getString("status");
             firstname = json.getString("firstName");
             lastname = json.getString("lastName");
@@ -54,22 +54,23 @@ public class PayResult implements Serializable {
             timestamp = json.getString("timestamp");
             resultcode = json.getString("resultCode");
             resultdesc = json.getString("resultDescription");
-            cardbin = json.getString("cardBin");
-            cardlastdigit = json.getString("cardLast4Digits");
+            if (json.has("cardBin")) {
+                cardbin = json.getString("cardBin");
+            }
+            if (json.has("cardLast4Digits")) {
+                cardlastdigit = json.getString("cardLast4Digits");
+            }
             custemail = json.getString("custEmail");
             paymentmode = json.getString("paymentMode");
             paymentbrand = json.getString("paymentBrand");
             paymentid = json.getString("paymentId");
             merchantTransactionid = json.getString("merchantTransactionId");
             descriptor = json.getString("descriptor");
-            token = json.getString("token");
-            registrationid = json.getString("registrationId");
 
         } catch (JSONException e){
             e.printStackTrace();
         }
     }
-
 
     public String toJsonString() {
         JSONObject jsonObject = new JSONObject();
@@ -96,8 +97,6 @@ public class PayResult implements Serializable {
             jsonObject.put("paymentId", this.paymentid);
             jsonObject.put("merchantTransactionId", this.merchantTransactionid);
             jsonObject.put("descriptor", this.descriptor);
-            jsonObject.put("token", this.token);
-            jsonObject.put("registrationId", this.registrationid);
 
         } catch (JSONException e) {
             e.printStackTrace();
