@@ -6,7 +6,7 @@ import java.io.Serializable;
  * Created by Admin on 8/23/2018.
  */
 
-public class RequestParameters implements Serializable {
+public class PayRequest implements Serializable {
 
     private String memberId;
     private String checksum;
@@ -14,7 +14,6 @@ public class RequestParameters implements Serializable {
     private String merchantTransactionId;
     private String amount;
     private String currency;
-    private String merchantRedirectUrl;
     private String toType;
     private String version;
     private String email;
@@ -29,11 +28,9 @@ public class RequestParameters implements Serializable {
     private String country;
     private String telnocc;
     private String memberKey;
-    private String tmplAmount;
     private String orderDescription;
     private String countryCode;
     private String ipAddress;
-    private String tmplCurrency;
     private String reserveField;
     private String notificationUrl;
     private String hostUrl;
@@ -87,15 +84,6 @@ public class RequestParameters implements Serializable {
 
     public void setCurrency(String currency) {
         this.currency = currency;
-    }
-
-
-    public String getMerchantRedirectUrl() {
-        return merchantRedirectUrl;
-    }
-
-    public void setMerchantRedirectUrl(String merchantRedirectUrl) {
-        this.merchantRedirectUrl = merchantRedirectUrl;
     }
 
     public String getToType() {
@@ -202,14 +190,6 @@ public class RequestParameters implements Serializable {
         this.memberKey = memberKey;
     }
 
-    public String getTmplAmount() {
-        return tmplAmount;
-    }
-
-    public void setTmplAmount(String tmplAmount) {
-        this.tmplAmount = tmplAmount;
-    }
-
     public String getOrderDescription() {
         return orderDescription;
     }
@@ -232,14 +212,6 @@ public class RequestParameters implements Serializable {
 
     public void setIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
-    }
-
-    public String getTmplCurrency() {
-        return tmplCurrency;
-    }
-
-    public void setTmplCurrency(String tmplCurrency) {
-        this.tmplCurrency = tmplCurrency;
     }
 
     public String getReserveField() {
