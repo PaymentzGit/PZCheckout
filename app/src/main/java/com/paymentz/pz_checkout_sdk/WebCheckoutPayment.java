@@ -1,10 +1,8 @@
 package com.paymentz.pz_checkout_sdk;
 
-import android.app.Activity;
 import android.graphics.Bitmap;
 import android.net.http.SslError;
 import android.os.Bundle;
-
 import android.util.Log;
 import android.view.View;
 import android.webkit.JavascriptInterface;
@@ -16,8 +14,10 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 
-import com.paymentz.pz_checkout_sdk.model.PayResult;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.paymentz.pz_checkout_sdk.model.PayRequest;
+import com.paymentz.pz_checkout_sdk.model.PayResult;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -28,7 +28,7 @@ import java.util.Objects;
  * Created by Admin on 8/23/2018.
  */
 
- public class WebCheckoutPayment extends Activity {
+public class WebCheckoutPayment extends AppCompatActivity {
 
     String params;
     WebView webView;
@@ -157,4 +157,3 @@ import java.util.Objects;
         return sb.toString();
     }
 }
-
