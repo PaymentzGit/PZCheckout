@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.net.http.SslError;
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.View;
 import android.webkit.JavascriptInterface;
 import android.webkit.SslErrorHandler;
@@ -35,11 +36,10 @@ import java.util.Objects;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout);
 
-        final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        final ProgressBar progressBar = findViewById(R.id.progressBar);
         PayRequest payRequest = (PayRequest) Objects.requireNonNull(getIntent().getExtras()).get("requestParameters");
-        webView = (WebView) findViewById(R.id.webView_checkout);
+        webView = findViewById(R.id.webView_checkout);
         webView.getSettings();
-//        webView.setBackground(AppCompatResources.getDrawable(this,R.color.colorWhite));
         webView.setWebViewClient(new WebViewClient() {
 
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
@@ -69,7 +69,7 @@ import java.util.Objects;
 
         if(payRequest != null) {
 
-            String hostname = null;
+            String hostname;
             try {
                 hostname = getHostname(payRequest.getHostUrl());
             } catch (URISyntaxException e) {
@@ -140,7 +140,7 @@ import java.util.Objects;
             MessageDigest messageDigest = MessageDigest.getInstance("MD5");
             return getString(messageDigest.digest(message.getBytes()));
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e( this.getLocalClassName(),e.toString());
         }
         return message;
     }

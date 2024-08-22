@@ -1,5 +1,7 @@
 package com.paymentz.pz_checkout_sdk.model;
 
+import android.util.Log;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -68,7 +70,7 @@ public class PayResult implements Serializable {
             descriptor = json.getString("descriptor");
 
         } catch (JSONException e){
-            e.printStackTrace();
+            Log.e(getClass().getSimpleName(), e.toString());
         }
     }
 
@@ -99,7 +101,7 @@ public class PayResult implements Serializable {
             jsonObject.put("descriptor", this.descriptor);
 
         } catch (JSONException e) {
-            e.printStackTrace();
+            Log.e(getClass().getSimpleName(), e.toString());
         }
 
         return jsonObject.toString();
