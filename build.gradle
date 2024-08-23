@@ -18,6 +18,27 @@ buildscript {
     }
 }
 
+plugins {
+    id 'maven-publish'
+}
+
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = 'com.paymentz.pzcheckout'
+            artifactId = 'library'
+            version = '1.0'
+
+            from components.findByName('release')
+        }
+    }
+    repositories {
+        maven {
+            name = "StandardCheckout_Android" //  optional target repository name
+            url = "https://gitlabnew.paymentz.com/paymentz/standardcheckout_android.git"
+        }
+    }
+}
 allprojects {
     repositories {
         google()

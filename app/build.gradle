@@ -1,25 +1,33 @@
 apply plugin: 'com.android.library'
-
 android {
     compileSdk 34
     namespace "com.paymentz.pz_checkout_sdk"
     defaultConfig {
         minSdkVersion 21
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        aarMetadata {
+            minCompileSdk = 21
+        }
     }
     buildTypes {
         release {
             multiDexEnabled false
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
     repositories {
         maven {
             url "https://maven.google.com"
+        }
+    }
+
+    publishing {
+        singleVariant('release') {
+            withSourcesJar()
         }
     }
 
